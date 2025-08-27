@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Samyuktha Jakkula — Resume</title>
+  <style>
+    :root{
+      --bg: #fafcff;
+      --card: #ffffff;
+      --accent: #2563eb;
+      --accent-soft: #e0eaff;
+      --muted: #526480;
+      --muted-bg: #f2f7fb;
+      --border: #dde7f2;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;
+      padding:28px;
+      background: var(--bg);
+      color: #23304a;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height:1.6;
+      font-size: 11pt;
+    }
+    .container{
+      max-width:980px;
+      margin:0 auto;
+      background: var(--card);
+      border-radius:18px;
+      padding:28px 30px;
+      box-shadow: 0 6px 32px rgba(37,99,235,0.06);
+      display: grid;
+      grid-template-columns: 1fr 310px;
+      gap:32px;
+      border: 1.4px solid var(--border);
+      font-size: 11pt;
+    }
+    .header{
+      grid-column:1 / -1;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      border-bottom:1px solid var(--border);
+      padding-bottom:18px;
+      margin-bottom:14px;
+      flex-wrap: wrap;
+    }
+    .name{
+      display:flex;
+      gap:16px;
+      align-items:center;
+    }
+    .avatar{
+      width:72px; height:72px; border-radius:14px;
+      background: linear-gradient(135deg, var(--accent) 65%, var(--accent-soft) 100%);
+      display:flex; align-items:center; justify-content:center;
+      color:#fff; font-weight:700; font-size:22px; box-shadow: 0 2px 8px #e0eaff60;
+      letter-spacing:0.5px;
+      border:3px solid var(--accent-soft);
+      user-select: none;
+    }
+    h1{margin:0;font-size:25px;letter-spacing:0.1px;font-weight:700;}
+    .role{color:var(--accent);font-size:15px;margin-top:3px;}
+    .links a{
+      color:var(--accent);
+      margin-left:14px;
+      font-weight:600;
+      font-size:15px;
+      text-decoration:none;
+      background:var(--accent-soft);
+      padding:5px 14px;
+      border-radius:6px;
+      transition:.18s;
+      border: 1px solid #e2e8f0;
+    }
+    .links a:hover{
+      background:var(--accent);color:#fff; text-decoration:underline;
+    }
+    .main{
+      background: var(--muted-bg);
+      padding:20px;
+      border-radius:13px;
+      min-height:320px;
+      box-shadow: 0 1px 6px #d6e6ff30;
+      font-size: 11pt;
+    }
+    .section{margin-bottom:18px;}
+    .section h3{
+      margin:0 0 7px 0;
+      color: var(--accent);
+      font-size:16px;
+      font-weight:700;
+      letter-spacing:0.3px;
+    }
+    p.profile{
+      margin:0;color:#355472;font-size:14px;
+    }
+    .item{margin-bottom:10px;}
+    .item .title{font-weight:700;color:#244073;}
+    .item .meta{font-size:13px;color:var(--muted);}
+    .item ul{ margin:6px 0 0 15px; color:#50608a; font-size:13px;}
+    .aside{
+      padding:20px 18px;
+      border-radius:13px;
+      background: #f7faff;
+      height:fit-content;
+      box-shadow: 0 1px 6px #c7e2f644;
+      border: 1.2px solid var(--accent-soft);
+      font-size: 11pt;
+    }
+    .contact-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:3px;}
+    .contact-row a{color:var(--muted);font-size:14px;text-decoration:none}
+    .contact-row a:hover{ text-decoration: underline;}
+    .skill-list{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding:6px 12px;
+      border-radius:9px;
+      font-size:13px;
+      border: 1px solid #e3eefa;
+      user-select: none;
+    }
+    .projects .proj{margin-bottom:11px;}
+    .proj a{
+      color:var(--accent);
+      font-weight:650;
+      text-decoration:none;
+      font-size:15px;
+      padding-right:3px;
+      user-select: text;
+    }
+    .proj a:hover{ text-decoration: underline; }
+    .projects .proj .meta{
+      color:#526480;
+      font-size:13px;
+    }
+    .print-note{font-size:12px;color:var(--muted);margin-top:10px}
+    @media (max-width:900px){
+      .container{grid-template-columns:1fr; padding:8vw;}
+      .header{flex-direction:column;align-items:flex-start;gap:7px;}
+    }
+    @media (max-width:600px){
+      .container{padding:2vw;}
+      .main, .aside {padding:8px;}
+    }
+    /* Print Optimization to fit single page */
+    @media print {
+      body {
+        margin: 0.4in !important;
+        font-size: 10pt !important;
+      }
+      .container {
+        padding: 12px !important;
+        max-width: 100% !important;
+        box-shadow: none !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+      }
+      .section, .proj {
+        margin-bottom: 8px !important;
+      }
+      .links a {
+        margin-left: 6px !important;
+        padding: 2px 8px !important;
+        font-size: 11pt !important;
+      }
+      .print-note {
+        display: none !important;
+      }
+      .main, .aside {
+        padding: 10px !important;
+      }
+      h1 {
+        font-size: 18pt !important;
+      }
+      .role {
+        font-size: 12pt !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" role="main" aria-label="Resume of Samyuktha Jakkula">
+    <div class="header">
+      <div class="name" aria-label="Name and title">
+        <div class="avatar" aria-hidden="true">SJ</div>
+        <div>
+          <h1>SAMYUKTHA JAKKULA</h1>
+          <div class="role">Full Stack Developer • 3rd year CSE student (B.Tech)</div>
+        </div>
+      </div>
+      <div class="links" aria-label="Online profiles">
+        <a href="https://github.com/Samyu18" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/samyuktha-181105-jakkula" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="main">
+      <section class="section" aria-labelledby="profile-heading">
+        <h3 id="profile-heading">Profile</h3>
+        <p class="profile">
+          Motivated third-year Computer Science Engineering student with frontend/web and AI/ML internship experience. Passionate about creative, user-centric applications. Seeking opportunities in software/web development.
+        </p>
+      </section>
+      <section class="section" aria-labelledby="education-heading">
+        <h3 id="education-heading">Education</h3>
+        <div class="item">
+          <div class="title">B.Tech — Computer Science Engineering</div>
+          <div class="meta">Gokaraju Rangaraju Institute of Engineering and Technology (GRIET), Hyderabad • Jan 2023 – Jan 2027</div>
+        </div>
+        <div class="item">
+          <div class="title">Intermediate</div>
+          <div class="meta">Sri Chaitanya College, Hyderabad • Completed 2021</div>
+        </div>
+        <div class="item">
+          <div class="title">Secondary Education</div>
+          <div class="meta">St. Francis Girls High School, Hyderabad • Jan 2021</div>
+        </div>
+      </section>
+      <section class="section" aria-labelledby="internships-heading">
+        <h3 id="internships-heading">Internships</h3>
+        <ul style="margin-left:18px; color:#50608a; font-size:13px; padding-left:18px;">
+            <li><strong>AICTE-EduSkills AWS AI-ML Virtual Internship (Jan-Mar 2025):</strong> Core AI/ML concepts, model training, AWS cloud tools.  
+              <a href="https://drive.google.com/file/d/1hx9uqR7ewC6LRcTjSLxiWZIkEkSAzdp2/view?usp=sharing" target="_blank" rel="noopener" style="color:#2563eb;">[Internship Document]</a>
+            </li>
+            <li><strong>AI-ML Virtual Internship at Google for Developers (Apr-Jun 2025):</strong> AI & ML fundamentals, projects with EduSkills & Google.
+              <br><a href="https://drive.google.com/file/d/1vUkGzvD9uT7Ci_kGHEuUV2Q4RiNZNvoS/view?usp=sharing" target="_blank" rel="noopener" style="color:#2563eb;">[Internship Report]</a>
+            </li>
+        </ul>
+      </section>
+      <section class="section" aria-labelledby="courses-heading">
+        <h3 id="courses-heading">Courses</h3>
+        <ul style="margin-left:18px; color:#50608a; font-size:13px; padding-left:18px;">
+          <li>Project Management Job Simulation, Forage (Apr 2025)</li>
+          <li>Deep Learning for Developers, Infosys Springboard <a href="https://drive.google.com/file/d/1mzGgOqUxetqATMFrwIAcpXXMOguuKw1H/view?usp=sharing" target="_blank" rel="noopener" style="color:#2563eb;">[Certificate]</a></li>
+        </ul>
+      </section>
+      <section class="section projects" aria-labelledby="projects-heading">
+        <h3 id="projects-heading">Projects</h3>
+        <div class="proj item">
+          <div class="title">
+            <a href="https://github.com/Samyu18/AI-virtual-Stylish" target="_blank" rel="noopener">👗 AI Virtual Stylist</a>
+          </div>
+          <div class="meta">
+            Personal AI fashion app for outfit suggestions using photos and quizzes.<br>
+            <em>Flask, Python, HTML, CSS</em>
+          </div>
+        </div>
+        <div class="proj item">
+          <div class="title">
+            <a href="https://github.com/Samyu18/OS-algorithm-simulator" target="_blank" rel="noopener">OS Algorithm Simulator</a>
+          </div>
+          <div class="meta">
+            Visualizes CPU, disk, and memory scheduling with stats and Gantt charts.<br>
+            <em>HTML, JS</em>
+          </div>
+        </div>
+        <div class="proj item">
+          <div class="title">
+            <a href="https://github.com/Samyu18/Mini-Games" target="_blank" rel="noopener">Mini Games Collection</a>
+          </div>
+          <div class="meta">
+            Four animated browser games (Tic Tac Toe, Snake, RPS, Memory).<br>
+            <em>HTML, CSS, JS</em>
+          </div>
+        </div>
+        <div class="proj item">
+          <div class="title">
+            <a href="https://recipemaker-6bvr.onrender.com" target="_blank" rel="noopener">🥗 RecipeMaker</a>
+          </div>
+          <div class="meta">
+            Recipe finder: filter by ingredient/cuisine, responsive and user-friendly.<br>
+            <em>HTML, CSS, Free API</em>
+          </div>
+        </div>
+        <p style="font-size:13px;color:var(--muted);margin-top:8px">
+          View more at <a href="https://github.com/Samyu18" style="color:var(--accent)" target="_blank" rel="noopener">github.com/Samyu18</a>.
+        </p>
+      </section>
+      <section class="section" aria-labelledby="achievements-heading">
+        <h3 id="achievements-heading">Achievements & Activities</h3>
+        <ul style="margin:7px 0 0 17px;color:#4360a7; font-size:14px;">
+          <li>Completed AICTE-EduSkills AWS AI/ML internship (2025)</li>
+          <li>Active participant: college coding clubs and hackathons</li>
+        </ul>
+      </section>
+    </div>
+    <aside class="aside" aria-labelledby="contact-heading">
+      <section class="section" id="contact-heading">
+        <h3>Contact & Personal Info</h3>
+        <p>
+          9-2-659, Rezimental Bazar, Secunderabad, St Francis Street<br>
+          Secunderabad, 500025, India
+        </p>
+        <p>Phone: +91 8919523464<br>
+           Email: <a href="mailto:samyuktha.yadav1811@gmail.com">samyuktha.yadav1811@gmail.com</a></p>
+        <p>Date of Birth: 18/11/2005<br>
+           Place of Birth: Secunderabad<br>
+           Nationality: Indian
+        </p>
+      </section>
+      <section class="section" aria-labelledby="skills-heading">
+        <h3 id="skills-heading">Skills</h3>
+        <ul style="list-style:none; padding-left: 0; color:#2663ae; font-size:14px; line-height:1.5;">
+          <li>Adaptability</li>
+          <li>Communication Skills</li>
+          <li>Ability to Learn Quickly</li>
+          <li>Leadership and Teamwork</li>
+          <li>Java (Intermediate)</li>
+          <li>Python (Intermediate)</li>
+          <li>C (Intermediate)</li>
+          <li>Basic understanding of database concepts</li>
+          <li>Problem-solving and debugging skills</li>
+          <li>Web Development: Eager to learn frontend and backend development</li>
+        </ul>
+      </section>
+      <section class="section" aria-labelledby="languages-heading">
+        <h3 id="languages-heading">Languages</h3>
+        <ul style="list-style:none; padding-left: 0; font-size:14px; color:#2663ae; line-height:1.5;">
+          <li>English</li>
+          <li>Telugu</li>
+          <li>Hindi</li>
+        </ul>
+      </section>
+      <section class="section" aria-labelledby="tools-heading">
+        <h3 id="tools-heading">Tools & Tech</h3>
+        <div style="color:var(--muted);font-size:13px">
+          VS Code &middot; Chrome DevTools &middot; Git & GitHub &middot; Firebase &middot; AWS (S3, EC2) &middot; scikit-learn (basic)
+        </div>
+      </section>
+      <!-- <div class="print-note">
+        <strong>Note:</strong> Use your browser’s "Print → Save as PDF" (minimal margins, fit scale) for a compact single-page PDF.
+      </div> -->
+    </aside>
+  </div>
+</body>
+</html>
